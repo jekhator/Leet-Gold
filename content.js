@@ -49,7 +49,7 @@ async function callOpenAIApi(promptText) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer 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`
+                'Authorization': `Bearer ${apiKey}`
             },
             body: JSON.stringify({ 
                 prompt: promptText,
