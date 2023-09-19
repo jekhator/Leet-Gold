@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>My Chrome Extension</title>
+</head>
+<body>
+    <div id="popupContent">
+        <h1>LeetCode Solver</h1>
+        <label for="languageSelector">Select Programming Language: </label>
+        <select id="languageSelector">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <!-- Add more options as needed -->
+        </select>
+        <button id="runAnalysisButton">Run Analysis</button>
+        <div id="problemAnalysisSection">
+            <h2>Problem Analysis</h2>
+            <div id="problemStatement">Problem Statement: <span id="problemStatementContent"></span></div>
+            <div id="optimalSolution">Optimal Solution: <span id="optimalSolutionContent"></span></div>
+            <div id="solutionExplanation">Solution Explanation: <span id="solutionExplanationContent"></span></div>
+        </div>
+        <a href="settings.html" target="_blank">Open Settings</a>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

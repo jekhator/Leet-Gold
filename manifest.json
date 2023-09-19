@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Leet Gold",
+    "version": "1.0",
+    "description": "This LeetCode helper is an intuitive browser extension designed to enhance your problem-solving skills and productivity on LeetCode. Powered by the highly advanced GPT-4, this extension acts as a personalized coding assistant to help you navigate through coding challenges effortlessly.",
+    "action": {
+       "default_popup": "popup.html",
+       "default_icon": {
+          "16": "images/icon16.png",
+          "48": "images/icon48.png",
+          "128": "images/icon128.png"
+       }
+    },
+    "permissions": [
+       "activeTab",
+       "storage"
+    ],
+    "background": {
+       "service_worker": "background.js"
+    },
+    "content_scripts": [
+       {
+            "matches": ["https://leetcode.com/problems/*"], 
+            "js": ["content.js"]
+       }
+    ],
+    "icons": {
+       "16": "images/icon16.png",
+       "48": "images/icon48.png",
+       "128": "images/icon128.png"
+    }
+}
