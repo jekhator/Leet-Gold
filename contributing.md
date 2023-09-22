@@ -14,7 +14,7 @@ Visit the Leet Gold GitHub repository: [Leet Gold Repository](https://github.com
 Click the "Fork" button in the upper right corner to create your own copy of the project.
 
 Choose an Issue:
-Browse our list of open issues: [Open Issues](ISSUES.md)
+Browse our list of open issues: [Open Issues](issues.md)
 Select an issue that interests you or aligns with your skills and expertise.
 
 Contribute:
