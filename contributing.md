@@ -46,4 +46,3 @@ Warm regards,
 C. James
 jekhator
 [GitHub Profile](https://github.com/jekhator)
-
