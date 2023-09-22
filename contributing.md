@@ -44,6 +44,6 @@ Thank you for considering my invitation to contribute to Leet Gold. I look forwa
 and collaboration.
 
 Warm regards,
-C. James
-jekhator
-[GitHub Profile](https://github.com/jekhator)
+  - C. James
+  - jekhator
+  - [GitHub Profile](https://github.com/jekhator)
