@@ -27,4 +27,4 @@ If you'd like to contribute to this project, please follow our [contribution gui
 - C. James - Project Lead
 
 ## Documentation
-Additional documentation, if available, can be found [here](documentation/).
+Additional documentation and program issues, if available, can be found [here](issues.md).
