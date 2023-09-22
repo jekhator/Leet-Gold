@@ -7,23 +7,63 @@
     <title>My Chrome Extension</title>
 </head>
 <body>
-    <div id="popupContent">
-        <h1>LeetCode Solver</h1>
-        <label for="languageSelector">Select Programming Language: </label>
+    <main id="popupContent">
+        <h1>Leet Gold</h1>
+        <label for="languageSelector">Select Programming Language:</label>
         <select id="languageSelector">
+            <!-- Programming language options -->
+            <option value="python" selected>Python</option>
+            <option value="java">Java</option>
+            <option value="c++">C++</option>
             <option value="javascript">JavaScript</option>
-            <option value="python">Python</option>
-            <!-- Add more options as needed -->
+            <option value="c">C</option>
+            <option value="c#">C#</option>
+            <option value="php">PHP</option>
+            <option value="swift">Swift</option>
+            <option value="kotlin">Kotlin</option>
+            <option value="ruby">Ruby</option>
+            <option value="rust">Rust</option>
         </select>
+        
+        <div class="spinner hidden" id="spinner"></div>
+        
         <button id="runAnalysisButton">Run Analysis</button>
-        <div id="problemAnalysisSection">
-            <h2>Problem Analysis</h2>
-            <div id="problemStatement">Problem Statement: <span id="problemStatementContent"></span></div>
-            <div id="optimalSolution">Optimal Solution: <span id="optimalSolutionContent"></span></div>
-            <div id="solutionExplanation">Solution Explanation: <span id="solutionExplanationContent"></span></div>
-        </div>
+        
+        <section id="problemAnalysisSection">
+            <h2>Problem Analysis (refresh page)</h2>
+            <h3>Important Notes</h3>
+            <ul>
+                <li>Please make sure you are on a LeetCode problems page (https://leetcode.com/problems/#).</li>
+                <li>Information may take some time to populate (<b>OpenAI calls are notoriously unreliable</b>).</li>
+                <li>If there is "No data", problem statement likely has not loaded, please reclick.</li>
+                <li>Allow up to 1 minute for the spinner, then click again if necessary.</li>
+            </ul>
+            
+            <article id="problemStatement">
+                <h2>Problem Statement:</h2>
+                <span id="problemStatementContent"></span>
+            </article>
+            
+            <article id="optimalSolution">
+                <h2>Optimal Solution:</h2>
+                <span id="optimalSolutionContent"></span>
+            </article>
+            
+            <article id="solutionExplanation">
+                <h2>Solution Explanation:</h2>
+                <span id="solutionExplanationContent"></span>
+            </article>
+            
+            <article id="timeAndSpaceComplexity">
+                <h2>Time and Space:</h2>
+                <span id="timeAndSpaceComplexityContent"></span>
+            </article>
+            &nbsp;
+            &nbsp;
+        </section>
+        
         <a href="settings.html" target="_blank">Open Settings</a>
-    </div>
+    </main>
     <script src="popup.js"></script>
 </body>
 </html>

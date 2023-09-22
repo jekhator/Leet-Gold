@@ -1,5 +1,3 @@
-let checkTimeout;
-let attempts = 0;
 let programmingLanguage;
 let problemContent;
 
@@ -9,26 +7,13 @@ async function fetchGPT4Solution() {
             throw new Error('Problem content is undefined or null');
         }
 
-        const problemPrompt = `Develop a Python function to solve the following problem written in ${programmingLanguage}: 
-        Problem Statement: ${problemContent}`;
-
-        let optimalSolution = await callOpenAIApi(problemPrompt);
+        let optimalSolution = await callOpenAIApi(`Solve this in ${programmingLanguage}: ${problemContent}`);
         console.log('Optimal Solution:', optimalSolution);
 
-        const explanationPrompt = `In 3 sentences, give a brief explanation for the following code:
-        
-        Code:
-        ${optimalSolution}`;
-
-        let solutionExplanation = await callOpenAIApi(explanationPrompt);
+        let solutionExplanation = await callOpenAIApi(`Explain this: ${optimalSolution}`);
         console.log('In-depth Explanation:', solutionExplanation);
 
-        const complexityPrompt = `What is the time and space complexity of the following code (just give the complexities no explanation):
-
-        Code:
-        ${optimalSolution}`;
-
-        let timeAndSpaceComplexity = await callOpenAIApi(complexityPrompt);
+        let timeAndSpaceComplexity = await callOpenAIApi(`Time and Space Complexity?: ${optimalSolution}`);
         console.log('Time and Space Complexity:', timeAndSpaceComplexity);
 
         return {
@@ -48,20 +33,23 @@ async function callOpenAIApi(promptText) {
         let response = await fetch('https://api.openai.com/v1/engines/davinci/completions', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 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",
+                "OpenAI-Organization": "org-zpgiY9bN5EjXZqKNTUPVbHsG" 
             },
             body: JSON.stringify({ 
                 prompt: promptText,
-                max_tokens: 1000,
-                temperature: 0.7
+                max_tokens: 200,
+                temperature: 0.7,
+                frequency_penalty: 0,
+                presence_penalty: 0
              })
         });
 
         if (!response.ok) {
             throw new Error(`API response error: ${response.statusText}`);
         }
-
+        
         let responseData = await response.json();
         if (!responseData.choices) {
             throw new Error('Incomplete response from API: "choices" property is missing');
@@ -82,25 +70,23 @@ async function callOpenAIApi(promptText) {
 
 
 function checkForProblemElement() {
-    const problemElement = document.querySelector('div[data-track-load="description_content"]');
-
-    if (problemElement) {
-        problemContent = problemElement.textContent;
-        console.log('Problem Content:', problemContent);
-        clearTimeout(checkTimeout);
-    } else {
-        console.error('Problem element not found');
-        if (attempts < 20) {  // Increased maximum number of attempts
-            attempts += 1;
-            checkTimeout = setTimeout(checkForProblemElement, 1000);  // 1000ms or 1 second delay between checks
+    setTimeout(() => {
+        const problemElement = document.querySelector('div[data-track-load="description_content"]');
+    
+        if (problemElement) {
+            problemContent = problemElement.textContent;
+            console.log('Problem Content:', problemContent);
+        } else {
+            console.error('Problem element not found');
         }
-    }
+    }, 5000); // Delay of 5000 milliseconds (5 seconds)
 }
 
 
 function startChecking() {
     chrome.storage.local.get('programmingLanguage', (result) => {
         programmingLanguage = result.programmingLanguage || 'python';
+        console.log('Programming language retrieved:', programmingLanguage);
         setTimeout(() => checkForProblemElement(), 1000);  // 1000ms or 1 second delay
     });
 }
@@ -113,6 +99,17 @@ if (document.readyState === 'loading') {
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'fetchProblemStatement') {
+        console.log('fetchProblemStatement action received in content script');
+        
+        if (problemContent) {
+            sendResponse({ problemStatement: problemContent });
+        } else {
+            sendResponse({ error: 'Problem content is undefined or null' });
+        }
+
+        return true; // indicates that the response is sent asynchronously
+    }
     if (request.action === 'startAnalysis') {
         console.log('Start Analysis action received in content script');
 
