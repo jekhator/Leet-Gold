@@ -21,7 +21,7 @@ personalized coding assistant to help you navigate through coding challenges eff
 You can configure the extension's default programming language in the settings.
 
 ## Contributing
-If you'd like to contribute to this project, please follow our [contribution guidelines](CONTRIBUTING.md).
+If you'd like to contribute to this project, please follow our [contribution guidelines](contributing.md).
 
 ## Credits
 - C. James - Project Lead
