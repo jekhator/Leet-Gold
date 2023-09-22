@@ -9,27 +9,28 @@ perfectly with the goals of this project, and would greatly appreciate your cont
 
 Here's how you can get started...
 
-Fork the Repository:
-Visit the Leet Gold GitHub repository: [Leet Gold Repository](https://github.com/jekhator/Leet-Gold.git)
-Click the "Fork" button in the upper right corner to create your own copy of the project.
+- **Fork the Repository:**
+  - Visit the Leet Gold GitHub repository: [Leet Gold Repository](https://github.com/jekhator/Leet-Gold.git)
+  - Click the "Fork" button in the upper right corner to create your own copy of the project.
 
-Choose an Issue:
-Browse our list of open issues: [Open Issues](issues.md)
-Select an issue that interests you or aligns with your skills and expertise.
+- **Choose an Issue:**
+  - Browse our list of open issues: [Open Issues](issues.md)
+  - Select an issue that interests you or aligns with your skills and expertise.
 
-Contribute:
-Clone your forked repository to your local development environment.
-Make the necessary changes or additions to address the issue.
-Commit your changes and push them to your forked repository.
+- **Contribute:**
+  - Clone your forked repository to your local development environment.
+  - Make the necessary changes or additions to address the issue.
+  - Commit your changes and push them to your forked repository.
 
-Submit a Pull Request:
-Create a pull request from your forked repository to our main repository.
-Provide a clear and concise description of your changes.
-Explain why the changes you made are valuable to the project (optional).
+- **Submit a Pull Request:**
+  - Create a pull request from your forked repository to our main repository.
+  - Provide a clear and concise description of your changes.
+  - Explain why the changes you made are valuable to the project (optional).
 
-Engage with the Community:
-Engage in discussions on the pull request and address any feedback from maintainers or community members.
-Feel free to ask questions and collaborate with fellow contributors.
+- **Engage with the Community:**
+  - Engage in discussions on the pull request and address any feedback from maintainers or community members.
+  - Feel free to ask questions and collaborate with fellow contributors.
+
 By contributing to Leet Gold, you not only help improve the project but also become part of a vibrant 
 and supportive open-source community.
 
