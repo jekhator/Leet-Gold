@@ -79,7 +79,7 @@ function checkForProblemElement() {
         } else {
             console.error('Problem element not found');
         }
-    }, 5000); // Delay of 5000 milliseconds (5 seconds)
+    }, 5000); // 5 second delay
 }
 
 
@@ -87,7 +87,7 @@ function startChecking() {
     chrome.storage.local.get('programmingLanguage', (result) => {
         programmingLanguage = result.programmingLanguage || 'python';
         console.log('Programming language retrieved:', programmingLanguage);
-        setTimeout(() => checkForProblemElement(), 1000);  // 1000ms or 1 second delay
+        setTimeout(() => checkForProblemElement(), 1000);  // 1 second delay
     });
 }
 
@@ -108,7 +108,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             sendResponse({ error: 'Problem content is undefined or null' });
         }
 
-        return true; // indicates that the response is sent asynchronously
+        return true; 
     }
     if (request.action === 'startAnalysis') {
         console.log('Start Analysis action received in content script');

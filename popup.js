@@ -1,6 +1,5 @@
 console.log('Popup script loaded!');
 
-// Get references to the necessary elements
 const languageSelector = document.getElementById('languageSelector');
 const runAnalysisButton = document.getElementById('runAnalysisButton');
 const problemStatementContent = document.getElementById('problemStatementContent');
@@ -22,7 +21,6 @@ if (runAnalysisButton) {
 
         chrome.runtime.sendMessage({ action: 'runAnalysis' }, (response) => {
             if (response) {
-                // Assume response contains analyzed data
                 const analysisData = {
                     problemStatement: response.problemStatement || 'No data',
                     optimalSolution: response.optimalSolution || 'No data',
@@ -30,10 +28,8 @@ if (runAnalysisButton) {
                     timeAndSpaceComplexity: response.timeAndSpaceComplexity || 'No data',
                 };
 
-                // Save analysis data to storage
                 chrome.storage.local.set({ analysisData });
 
-                // Update popup contents
                 problemStatementContent.textContent = analysisData.problemStatement;
                 optimalSolutionContent.textContent = analysisData.optimalSolution;
                 solutionExplanationContent.textContent = analysisData.solutionExplanation;
