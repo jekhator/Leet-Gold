@@ -2,7 +2,7 @@
 
 ## Description
 The Leet Gold Chrome Extension is an intuitive browser extension designed to enhance your problem-solving 
-skills and productivity on LeetCode. Powered by the highly advanced AI model, this extension acts as a 
+skills and productivity on LeetCode. Powered by a highly advanced AI model, this extension acts as a 
 personalized coding assistant to help you navigate through coding challenges effortlessly.
 
 ## Installation
