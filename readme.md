@@ -7,9 +7,11 @@ personalized coding assistant to help you navigate through coding challenges eff
 
 ## Installation
 1. Clone or download this repository.
-2. Open Chrome and go to `https://chrome.google.com/webstore/oeahkfodfhcmdbcdobbcbmdlniphlmnp`.
-3. Click "Add to Chrome" in the top right corner.
-4. Wait for installation.
+2. Open "Manage Extensnions" in your Chrome broswer.
+3. Click "Developer Mode" in the top right corner.
+4. Pack extension using your local directory or upload unpacked files from your on-premise device.
+5. Click "Add to Chrome" in the top right corner.
+6. Wait for installation.
 
 ## Usage
 1. Click the Leet Gold extension icon in your Chrome toolbar.
